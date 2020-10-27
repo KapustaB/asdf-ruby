@@ -1,5 +1,6 @@
 RUBY_BUILD_VERSION="${ASDF_RUBY_BUILD_VERSION:-v20201005}"
 RUBY_BUILD_TAG="$RUBY_BUILD_VERSION"
+RUBY_BUILD_REPO="https://github.com/excid3/ruby-build.git"
 
 echoerr() {
   >&2 echo -e "\033[0;31m$1\033[0m"
@@ -39,7 +40,7 @@ download_ruby_build() {
     rm -rf $build_dir
 
     # Clone down and checkout the correct ruby-build version
-    git clone https://github.com/rbenv/ruby-build.git $build_dir >&2 >/dev/null
+    git clone $RUBY_BUILD_REPO $build_dir >&2 >/dev/null
     (cd $build_dir; git checkout $RUBY_BUILD_TAG >&2 >/dev/null)
 
     # Install in the ruby-build dir
