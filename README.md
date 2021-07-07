@@ -7,7 +7,7 @@ Ruby plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 ## Install
 
 ```
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 ```
 
 Please make sure you have the required [system dependencies](https://github.com/rbenv/ruby-build/wiki#suggested-build-environment) installed before trying to install Ruby.
@@ -44,6 +44,8 @@ bundler
 pry
 gem-ctags
 ```
+
+You can specify a non-default location of this file by setting a `ASDF_GEM_DEFAULT_PACKAGES_FILE` variable.
 
 ## Migrating from another Ruby version manager
 
