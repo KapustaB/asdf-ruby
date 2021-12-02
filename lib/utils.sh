@@ -1,9 +1,14 @@
-RUBY_BUILD_VERSION="${ASDF_RUBY_BUILD_VERSION:-v20210804}"
+RUBY_BUILD_VERSION="${ASDF_RUBY_BUILD_VERSION:-v20211124}"
 RUBY_BUILD_TAG="$RUBY_BUILD_VERSION"
 RUBY_BUILD_REPO="https://github.com/excid3/ruby-build.git"
 
 echoerr() {
   >&2 echo -e "\033[0;31m$1\033[0m"
+}
+
+errorexit() {
+  echoerr "$1"
+  exit 1
 }
 
 ensure_ruby_build_setup() {
